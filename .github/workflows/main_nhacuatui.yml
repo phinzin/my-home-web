@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_394fa75155914ffb9069d4ec50e0b1fb }}/phinzin/my-home:${{ github.sha }}
+        tags: phinzin/my-home:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'nhacuatui'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_70a14ffbe2924a4a9f9088a2bb1034cf }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_394fa75155914ffb9069d4ec50e0b1fb }}/phinzin/my-home:${{ github.sha }}'
+        images: 'phinzin/my-home:${{ github.sha }}'
