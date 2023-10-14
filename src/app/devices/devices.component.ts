@@ -34,6 +34,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', recentStage: '14/10/2023',nextStage:'14/01/2024'},
   {position: 2, name: 'Helium',recentStage: '14/10/2023',nextStage:'14/01/2024'},
   {position: 3, name: 'Lithium', recentStage: '14/10/2023',nextStage:'14/01/2024'},
-  {position: 4, name: 'Beryllium', recentStage: '14/10/2023',nextStage:'14/01/2024'}
+  {position: 4, name: 'Vệ sinh máy lạnh - Phú Định', recentStage: '12/10/2023',nextStage:'12/04/2024'}
 
 ];
