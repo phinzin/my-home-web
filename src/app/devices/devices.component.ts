@@ -12,7 +12,7 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 
 export class DevicesComponent implements AfterViewInit  {
-  displayedColumns: string[] = ['position', 'name', 'recentStage','nextStage'];
+  displayedColumns: string[] = ['position', 'name', 'recentStage','nextStage','note'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
 
   @ViewChild(MatPaginator)
@@ -28,12 +28,11 @@ export interface PeriodicElement {
   position: number;
   recentStage: string;
   nextStage: string;
+  note: string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', recentStage: '14/10/2023',nextStage:'14/01/2024'},
-  {position: 2, name: 'Helium',recentStage: '14/10/2023',nextStage:'14/01/2024'},
-  {position: 3, name: 'Lithium', recentStage: '14/10/2023',nextStage:'14/01/2024'},
-  {position: 4, name: 'Vệ sinh máy lạnh - Phú Định', recentStage: '12/10/2023',nextStage:'12/04/2024'}
+  {position: 1, name: 'Lõi Lọc - Bình Chánh', recentStage: '12/09/2023',nextStage:'12/12/2023',note:'đã thay 3 lõi'},
+  {position: 2, name: 'Vệ sinh máy lạnh - Phú Định', recentStage: '12/10/2023',nextStage:'12/04/2024', note:''}
 
 ];
