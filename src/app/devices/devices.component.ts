@@ -33,6 +33,7 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Lõi Lọc - Bình Chánh', recentStage: '12/09/2023',nextStage:'12/12/2023',note:'đã thay 3 lõi'},
-  {position: 2, name: 'Vệ sinh máy lạnh - Phú Định', recentStage: '12/10/2023',nextStage:'12/04/2024', note:''}
+  {position: 2, name: 'Vệ sinh máy lạnh - Phú Định', recentStage: '12/10/2023',nextStage:'12/04/2024', note:''},
+  {position: 3, name: 'Chích ngừa', recentStage: '11/11/2023',nextStage:'12/12/2023', note:''}
 
 ];
