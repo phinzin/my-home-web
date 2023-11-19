@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +13,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatTableModule} from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { MatPaginatorModule} from '@angular/material/paginator';
     MatNativeDateModule,
     MatTableModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
