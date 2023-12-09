@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MyHomeServiceService {
-  private apiUrl = 'https://nhacuatui-api.azurewebsites.net/api/my-home';
+  private apiUrl = 'http://my-management-api-ix-chart.ix-my-management-api.svc.cluster.local:9081/api/my-home';
 
   constructor(private http: HttpClient) {}
   getData(): Observable<any> {
