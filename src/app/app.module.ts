@@ -22,12 +22,14 @@ import { MatSelectModule } from '@angular/material/select';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { EditComponent } from './devices/edit/edit.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    DevicesComponent
+    DevicesComponent,
+    EditComponent
   ],
   imports: [
     BrowserModule,

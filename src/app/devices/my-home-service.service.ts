@@ -13,7 +13,12 @@ export class MyHomeServiceService {
     return this.http.get(`${this.apiUrl}/all`);
   }
 
-  postData(data: any): Observable<any> {
+  addNote(data: any): Observable<any> {
     return this.http.post(`${this.apiUrl}`, data);
+  }
+
+  updateNote(id: string, data: any): Observable<any> {
+    data["id"] = id;
+    return this.http.put(`${this.apiUrl}`, data);
   }
 }
