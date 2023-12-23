@@ -19,17 +19,22 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditComponent } from './devices/edit/edit.component';
+import { DialogComponent } from './shared/dialog/dialog.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DevicesComponent,
-    EditComponent
+    EditComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +59,8 @@ import { EditComponent } from './devices/edit/edit.component';
     MatNativeDateModule,
     MatRadioModule,
     MatSelectModule,
+    MatProgressBarModule,
+    MatProgressSpinnerModule,
     ReactiveFormsModule,
     HttpClientModule,
     MatTableModule,

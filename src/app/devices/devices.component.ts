@@ -4,6 +4,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MyHomeServiceService } from './my-home-service.service';
 import { MatDialog } from '@angular/material/dialog';
 import { EditComponent } from './edit/edit.component';
+import { DialogInterface } from '../interfaces/dialog.interface';
+import { DialogComponent } from '../shared/dialog/dialog.component';
+import { isNgTemplate } from '@angular/compiler';
 
 
 
@@ -59,7 +62,25 @@ export class DevicesComponent implements AfterViewInit {
     });
   }
   deleteNote(arg0: any) {
-
+    const dialogInterface: DialogInterface = {
+      dialogHeader: 'Delete Note',
+      dialogContent: 'Delete '+arg0["name"]+" ?",
+      cancelButtonLabel: 'Cancel',
+      confirmButtonLabel: 'Yes',
+      callbackMethod: () => {
+        this.performDialogDelete(arg0);
+      },
+    };
+    this.dialog.open(DialogComponent, {
+      width: '300px',
+      data: dialogInterface,
+    });
+  }
+  performDialogDelete(item:any) {
+    this.myHomeService.deleteNote(item.id).subscribe({
+      next: (v) => console.log(v),
+      error: (e) => console.log(e)
+    })
   }
 
 }

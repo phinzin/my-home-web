@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MyHomeServiceService {
+
   // private apiUrl = 'http://my-management-api-ix-chart.ix-my-management-api.svc.cluster.local:9081/api/my-home';
   private apiUrl = 'https://notes-api.phitruong.io.vn/api/my-home'
   constructor(private http: HttpClient) {}
@@ -20,5 +21,9 @@ export class MyHomeServiceService {
   updateNote(id: string, data: any): Observable<any> {
     data["id"] = id;
     return this.http.put(`${this.apiUrl}`, data);
+  }
+
+  deleteNote(id: any): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }
