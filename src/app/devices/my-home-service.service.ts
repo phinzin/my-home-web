@@ -24,6 +24,6 @@ export class MyHomeServiceService {
   }
 
   deleteNote(id: any): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}?id=${id}`);
   }
 }
