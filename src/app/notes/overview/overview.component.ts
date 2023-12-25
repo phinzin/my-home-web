@@ -1,4 +1,11 @@
 import { Component, AfterViewInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+import { NotesService } from '../services/notes.service';
+import { EditComponent } from '../components/edit/edit.component';
+import { DialogInterface } from 'src/app/interfaces/dialog.interface';
+import { DialogComponent } from 'src/app/shared/dialog/dialog.component';
 
 @Component({
   selector: 'app-overview',
@@ -18,12 +25,12 @@ export class OverviewComponent implements AfterViewInit {
   }
 
 
-  constructor(private myHomeService: MyHomeServiceService,
+  constructor(private noteService: NotesService,
     private dialog: MatDialog) {
   }
 
   getNotes() {
-    this.myHomeService.getData().subscribe((data) => {
+    this.noteService.getData().subscribe((data) => {
       this.dataSource.data = data;
     });
   }
@@ -66,7 +73,7 @@ export class OverviewComponent implements AfterViewInit {
     });
   }
   performDialogDelete(item:any) {
-    this.myHomeService.deleteNote(item.id).subscribe({
+    this.noteService.deleteNote(item.id).subscribe({
       next: (v) => console.log(v),
       error: (e) => console.log(e)
     })

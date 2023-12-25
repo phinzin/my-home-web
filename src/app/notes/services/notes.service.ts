@@ -1,13 +1,11 @@
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class MyHomeServiceService {
-
-  // private apiUrl = 'http://my-management-api-ix-chart.ix-my-management-api.svc.cluster.local:9081/api/my-home';
+export class NotesService {
   private apiUrl = 'https://notes-api.phitruong.io.vn/api/my-home'
   constructor(private http: HttpClient) {}
   getData(): Observable<any> {
@@ -26,4 +24,5 @@ export class MyHomeServiceService {
   deleteNote(id: any): Observable<any> {
     return this.http.delete(`${this.apiUrl}?id=${id}`);
   }
+
 }
