@@ -27,6 +27,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { EditComponent } from './devices/edit/edit.component';
 import { DialogComponent } from './shared/dialog/dialog.component';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { DialogComponent } from './shared/dialog/dialog.component';
     DialogComponent
   ],
   imports: [
+    CoreModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
