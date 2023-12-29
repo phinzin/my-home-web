@@ -1,1 +1,17 @@
-<p>overview works!</p>
+<mat-card>
+  <mat-card-header fxLayout="row">
+    <span style="margin-right: 10px;flex: 1 1 0%;box-sizing: border-box;">Giao Dịch</span>
+    <button (click)="startAddTransaction()" mat-fab matTooltip="Thêm (+) ...">
+      <mat-icon><span class="material-symbols-outlined">
+        add
+        </span></mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="transaction-container">
+      <div class="header-row">
+
+      </div>
+    </div>
+  </mat-card-content>
+</mat-card>

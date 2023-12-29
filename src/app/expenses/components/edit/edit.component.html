@@ -1,0 +1,45 @@
+<div mat-dialog-title>
+  <h1>Giao dịch</h1>
+</div>
+<mat-tab-group
+[selectedIndex]="isNegative ? 0 : 1"
+(selectedTabChange)="isNegative = ($event.index === 0)">
+<mat-tab label="Chi Phí"></mat-tab>
+<mat-tab label="Thu Nhập"></mat-tab>
+</mat-tab-group>
+<form [formGroup]="transactionForm" (ngSubmit)="onFormSubmit()">
+
+<mat-form-field>
+  <mat-label>Ngày:</mat-label>
+  <input matInput [matDatepicker]="picker" formControlName="date">
+  <mat-hint>DD/MM/YYYY</mat-hint>
+  <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker touchUi #picker></mat-datepicker>
+  <mat-error *ngIf="transactionForm.get('date')?.hasError('required') && transactionForm.get('date')?.touched">
+    Vui lòng nhập Ngày.
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Mô tả:</mat-label>
+  <input matInput type="text" formControlName="description" />
+  <mat-error *ngIf="transactionForm.get('description')?.hasError('required') && transactionForm.get('description')?.touched">
+    Vui lòng nhập Mô tả.
+  </mat-error>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-label>Số lượng:</mat-label>
+  <input matInput type="number" formControlName="amount" />
+  <mat-error *ngIf="transactionForm.get('amount')?.hasError('required') && transactionForm.get('amount')?.touched">
+    Vui lòng nhập Số lượng.
+  </mat-error>
+  <mat-error *ngIf="transactionForm.get('amount')?.hasError('min') && transactionForm.get('amount')?.touched">
+    Số lượng phải lớn hơn 0.
+  </mat-error>
+</mat-form-field>
+
+<button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.valid">Submit</button>
+
+</form>
+
