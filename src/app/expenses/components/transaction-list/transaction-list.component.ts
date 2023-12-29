@@ -12,8 +12,8 @@ export class TransactionListComponent implements OnInit {
 toggleSelection(_t55: any) {
 }
 
-  displayedColumns: string[] = ['select', 'Ngày', 'Mô tả', 'Số Lượng'];
-  dataSource: MatTableDataSource<Transaction>;
+  displayedColumns: string[] = ['select', 'date', 'description', 'amount'];
+  dataSource: MatTableDataSource<Transaction> = new MatTableDataSource;
   selectedTransactions: Transaction[] = [];
 
   // transactions: Transaction[] = [
@@ -23,11 +23,14 @@ toggleSelection(_t55: any) {
   // ];
 
   constructor(private service: ExpensesService) {
+
+  }
+
+  getData(){
     this.service.getData().subscribe((data: Transaction[]) => {
       this.dataSource = new MatTableDataSource<Transaction>(data);
     });
   }
-
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected(): boolean {
     const numSelected = this.selectedTransactions.length;
@@ -57,6 +60,7 @@ toggleSelection(_t55: any) {
 
 
   ngOnInit(): void {
+    this.getData();
   }
 
 }

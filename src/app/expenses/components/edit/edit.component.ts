@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { ExpensesService } from '../../expenses.service';
 
 @Component({
   selector: 'app-edit',
@@ -14,7 +15,7 @@ export class EditComponent implements OnInit {
 onFormSubmit() {
   if (this.transactionForm.valid) {
     // Handle form submission (e.g., send data to a service)
-    console.log('Expense Form Submitted:', this.transactionForm.value);
+    this.saveData();
     this.matDialogRef.close(true);
   } else {
     // Mark form controls as touched to display validation errors
@@ -26,7 +27,8 @@ transactionForm: FormGroup;
 
   constructor(private fb: FormBuilder,
     @Inject(MAT_DIALOG_DATA) public data: any,
-    private matDialogRef: MatDialogRef<EditComponent>) {
+    private matDialogRef: MatDialogRef<EditComponent>,
+    private service: ExpensesService) {
 
       this.transactionForm = this.fb.group({
         date:[null, Validators.required],
@@ -40,6 +42,9 @@ transactionForm: FormGroup;
   ngOnInit(): void {
 
 
+  }
+  saveData(){
+    this.service.addTransaction(this.transactionForm.value)
   }
 
 }
