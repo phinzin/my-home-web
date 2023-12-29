@@ -1,13 +1,9 @@
 <div mat-dialog-title>
   <h1>Giao dịch</h1>
 </div>
-<mat-tab-group
-[selectedIndex]="isNegative ? 0 : 1"
-(selectedTabChange)="isNegative = ($event.index === 0)">
-<mat-tab label="Chi Phí"></mat-tab>
-<mat-tab label="Thu Nhập"></mat-tab>
-</mat-tab-group>
 <form [formGroup]="transactionForm" (ngSubmit)="onFormSubmit()">
+  <mat-label>{{ transactionForm.get('isExpense')?.value?'Chi Phí':'Thu Nhập'}}</mat-label>
+  <mat-slide-toggle formControlName="isExpense"></mat-slide-toggle>
 
 <mat-form-field>
   <mat-label>Ngày:</mat-label>
@@ -39,7 +35,7 @@
   </mat-error>
 </mat-form-field>
 
-<button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.valid">Submit</button>
+<button mat-raised-button color="primary" type="submit" [disabled]="!transactionForm.valid">Lưu</button>
 
 </form>
 

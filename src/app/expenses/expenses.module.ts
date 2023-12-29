@@ -14,11 +14,16 @@ import { MatInputModule } from '@angular/material/input';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import {MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { TransactionListComponent } from './components/transaction-list/transaction-list.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
     OverviewComponent,
-    EditComponent
+    EditComponent,
+    TransactionListComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +39,10 @@ import {MAT_DATE_LOCALE, MatNativeDateModule} from '@angular/material/core';
     MatInputModule,
     MatCardModule,
     MatDatepickerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
+    MatSlideToggleModule,
+    MatTableModule,
+    MatCheckboxModule
   ],
   providers: [
     {provide: MAT_DATE_LOCALE, useValue: 'vi-VN'},

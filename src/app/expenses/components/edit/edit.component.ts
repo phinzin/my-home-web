@@ -22,7 +22,6 @@ onFormSubmit() {
   }
 }
 
-isNegative: boolean = true;
 transactionForm: FormGroup;
 
   constructor(private fb: FormBuilder,
@@ -33,6 +32,7 @@ transactionForm: FormGroup;
         date:[null, Validators.required],
         amount:[null, [Validators.required, Validators.min(0)]],
         description: [null, Validators.required],
+        isExpense: true,
         who:''
       })
      }
