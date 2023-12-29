@@ -14,6 +14,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { SharedModule } from '../shared/shared.module';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatDialogModule} from '@angular/material/dialog';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     ReactiveFormsModule,
     FormsModule,
     MatFormFieldModule,
-    MatDialogModule
+    MatDialogModule,
+    MatInputModule
   ]
 })
 export class NotesModule { }
