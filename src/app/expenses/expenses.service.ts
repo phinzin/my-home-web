@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ExpensesService {
-  private apiUrl = 'https://notes-api.phitruong.io.vn/api/transaction'
+  // private apiUrl = 'https://notes-api.phitruong.io.vn/api/transaction'
+  private apiUrl='https://nhacuatui-api.azurewebsites.net/api/transaction'
 
   constructor(private http: HttpClient) { }
 
