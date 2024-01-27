@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class NotesService {
-  private apiUrl = 'https://notes-api.phitruong.io.vn/api/my-home'
+  // private apiUrl = 'https://notes-api.phitruong.io.vn/api/my-home'
+  private apiUrl='https://nhacuatui-api.azurewebsites.net/api/my-home'
   constructor(private http: HttpClient) {}
   getData(): Observable<any> {
     return this.http.get(`${this.apiUrl}/all`);
